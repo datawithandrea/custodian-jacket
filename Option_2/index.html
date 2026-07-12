@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custodian Jacket | Garment Story, Attribution and Care Information</title>
+  <meta name="description" content="Custodian Jacket garment story, attribution and care information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #211f1b;
+      --muted: #6f675d;
+      --cream: #f4efe5;
+      --cream-2: #faf7ef;
+      --sand: #d7c3a3;
+      --clay: #9b6245;
+      --ochre: #b98249;
+      --earth: #4b3a2b;
+      --charcoal: #191612;
+      --line: rgba(33, 31, 27, 0.14);
+      --soft: rgba(255, 255, 255, 0.62);
+      --shadow: 0 24px 70px rgba(33, 31, 27, 0.12);
+      --max: 1180px;
+      --hero-max: 1400px;
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--cream-2);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(185, 130, 73, 0.12), transparent 36rem),
+        linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 46%, #efe5d6 100%);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a { color: inherit; text-decoration: none; }
+
+    ::selection { background: rgba(185, 130, 73, 0.28); }
+
+    .progress {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 3px;
+      z-index: 1000;
+      background: linear-gradient(90deg, var(--clay), var(--ochre));
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: progress linear both;
+      animation-timeline: scroll();
+    }
+
+    @keyframes progress {
+      to { transform: scaleX(1); }
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 1rem;
+      background: var(--ink);
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      z-index: 1001;
+    }
+
+    .skip-link:focus { left: 1rem; }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(18px);
+      background: rgba(244, 239, 229, 0.82);
+      border-bottom: 1px solid rgba(33, 31, 27, 0.08);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.82rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.48rem 0.62rem;
+      border-radius: 999px;
+      transition: background 160ms ease, color 160ms ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(155, 98, 69, 0.1);
+      color: var(--ink);
+    }
+
+    .hero {
+      min-height: 82svh;
+      position: relative;
+      display: grid;
+      place-items: end center;
+      overflow: hidden;
+      isolation: isolate;
+      background: var(--charcoal);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(25, 22, 18, 0.92) 0%, rgba(25, 22, 18, 0.62) 48%, rgba(25, 22, 18, 0.25) 100%),
+        linear-gradient(180deg, rgba(25, 22, 18, 0.08) 0%, rgba(25, 22, 18, 0.82) 100%),
+        url("Image.png") center / cover no-repeat;
+      z-index: -2;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 12rem;
+      background: linear-gradient(180deg, transparent, var(--cream));
+      z-index: -1;
+    }
+
+    .hero-inner {
+      width: min(var(--hero-max), calc(100% - 2rem));
+      padding: 5.4rem 0 5.7rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .hero-copy {
+      color: #fff8ed;
+      max-width: 960px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0 0 1.2rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sand);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.6rem;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.8;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.02;
+      margin: 0;
+      color: inherit;
+    }
+
+    h1 {
+      max-width: 900px;
+      font-size: clamp(3.9rem, 8.8vw, 8.4rem);
+      letter-spacing: -0.055em;
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      margin-top: 1rem;
+      font-size: clamp(1.12rem, 2.2vw, 1.58rem);
+      color: rgba(255, 248, 237, 0.86);
+      max-width: 900px;
+      line-height: 1.42;
+    }
+
+    .hero-statement {
+      margin-top: 1.75rem;
+      max-width: 940px;
+      font-size: clamp(1rem, 1.25vw, 1.12rem);
+      color: rgba(255, 248, 237, 0.84);
+      border-left: 2px solid rgba(215, 195, 163, 0.82);
+      padding-left: 1.25rem;
+    }
+
+    .hero-statement p {
+      margin: 0;
+    }
+
+    .hero-statement p + p {
+      margin-top: 1rem;
+    }
+
+    .scroll-cue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 2.55rem;
+      color: rgba(255, 248, 237, 0.74);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .scroll-cue::after {
+      content: "↓";
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .hero-card {
+      background: rgba(250, 247, 239, 0.86);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: var(--radius);
+      padding: 1.3rem;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-card img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: calc(var(--radius) - 10px);
+      filter: saturate(0.94) contrast(0.98);
+    }
+
+    main { position: relative; }
+
+    section {
+      scroll-margin-top: 5.5rem;
+      padding: clamp(4.2rem, 8vw, 7rem) 1rem;
+    }
+
+    .section-inner {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: clamp(2rem, 6vw, 5.5rem);
+      align-items: start;
+    }
+
+    .section-kicker {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin: 0 0 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2.4rem, 5.8vw, 5.4rem);
+      letter-spacing: -0.045em;
+      color: var(--earth);
+    }
+
+    .section-note {
+      margin-top: 1.25rem;
+      color: var(--muted);
+      max-width: 20rem;
+      font-size: 0.95rem;
+    }
+
+    .copy {
+      max-width: 760px;
+      color: #3c372f;
+    }
+
+    .copy p { margin: 0 0 1.2rem; }
+    .copy p:last-child { margin-bottom: 0; }
+
+    .panel {
+      background: rgba(250, 247, 239, 0.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(1.35rem, 3vw, 2.25rem);
+      box-shadow: var(--shadow);
+    }
+
+    .question-block {
+      margin: 2rem 0 2.1rem;
+      padding: 0.45rem 0 0.45rem 1.55rem;
+      border-left: 3px solid var(--clay);
+      color: var(--earth);
+    }
+
+    .question-block .question-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 0.5rem;
+    }
+
+    .question-block p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.85rem, 4vw, 3.2rem);
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      margin: 0;
+    }
+
+    .visual-divider {
+      padding: 0 1rem;
+    }
+
+    .visual-divider-inner {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      min-height: 330px;
+      border-radius: calc(var(--radius) + 10px);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(90deg, rgba(25, 22, 18, 0.82), rgba(25, 22, 18, 0.24)),
+        url("Image.png") center / cover no-repeat;
+    }
+
+    .visual-divider-inner::after {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      border: 1px solid rgba(250, 247, 239, 0.25);
+      border-radius: calc(var(--radius) + 2px);
+      pointer-events: none;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.4rem 0 1.6rem;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 1.45rem;
+      border-radius: 22px;
+      background: rgba(155, 98, 69, 0.09);
+      border: 1px solid rgba(155, 98, 69, 0.16);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.45rem, 2.8vw, 2.1rem);
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: var(--earth);
+    }
+
+    .features-section .section-inner,
+    .care-section .section-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .center-heading {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .center-heading .section-note { margin-left: auto; margin-right: auto; }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-card {
+      min-height: 250px;
+      padding: clamp(1.15rem, 2.4vw, 1.75rem);
+      border-radius: 24px;
+      background: rgba(250, 247, 239, 0.74);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 45px rgba(33, 31, 27, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .feature-number {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: var(--clay);
+    }
+
+    .feature-card h3 {
+      font-size: clamp(1.45rem, 2vw, 2.05rem);
+      letter-spacing: -0.028em;
+      color: var(--earth);
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.62;
+    }
+
+    .care-list {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .care-item {
+      display: grid;
+      grid-template-columns: 3.4rem 1fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 1.1rem;
+      background: rgba(250, 247, 239, 0.76);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(33, 31, 27, 0.065);
+    }
+
+    .care-number {
+      width: 3.1rem;
+      height: 3.1rem;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(155, 98, 69, 0.1);
+      color: var(--clay);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .care-item p {
+      margin: 0;
+      font-size: 1rem;
+      color: #3c372f;
+    }
+
+    .attribution-band {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      color: #fff8ed;
+      background: var(--charcoal);
+    }
+
+    .attribution-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(25, 22, 18, 0.9), rgba(25, 22, 18, 0.72)),
+        url("Image.png") center / cover no-repeat;
+      opacity: 0.72;
+      z-index: -1;
+    }
+
+    .attribution-band .section-title,
+    .attribution-band .section-kicker,
+    .attribution-band .copy { color: inherit; }
+
+    .attribution-band .section-note,
+    .attribution-band .copy p { color: rgba(255, 248, 237, 0.82); }
+
+
+    .attribution-band .copy {
+      padding-top: 3.1rem;
+    }
+
+    #development .copy {
+      padding-top: 3.1rem;
+    }
+
+    .footer {
+      padding: 3rem 1rem;
+      background: #191612;
+      color: rgba(255, 248, 237, 0.74);
+    }
+
+    .footer-inner {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255, 248, 237, 0.16);
+      padding-top: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .to-top {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 900;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 248, 237, 0.36);
+      background: rgba(25, 22, 18, 0.72);
+      color: #fff8ed;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    @media (max-width: 980px) {
+      .site-nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-inner {
+        justify-content: flex-start;
+        gap: 1rem;
+        min-width: max-content;
+      }
+
+      .brand { font-size: 1.05rem; }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.2rem;
+      }
+
+      .nav-links a {
+        font-size: 0.66rem;
+        padding: 0.48rem 0.52rem;
+        white-space: nowrap;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 5rem 0 6.5rem;
+      }
+
+      .hero-card {
+        max-width: 260px;
+      }
+
+      .section-inner {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      .section-note { max-width: 100%; }
+      .attribution-band .copy,
+      #development .copy { padding-top: 0; }
+      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      body { font-size: 15.5px; }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(25, 22, 18, 0.58) 0%, rgba(25, 22, 18, 0.46) 45%, rgba(25, 22, 18, 0.72) 100%),
+          linear-gradient(90deg, rgba(25, 22, 18, 0.68), rgba(25, 22, 18, 0.34)),
+          url("Image.png") center / cover no-repeat;
+        filter: saturate(1.05) contrast(1.04);
+      }
+
+      .hero-inner {
+        padding: 4.25rem 0 5.5rem;
+      }
+
+      .hero-copy { max-width: 100%; }
+      .hero-subtitle { color: rgba(255, 248, 237, 0.94); }
+      .hero-statement {
+        max-width: 100%;
+        background: rgba(25, 22, 18, 0.42);
+        border-left-color: rgba(215, 195, 163, 0.95);
+        border-radius: 0 18px 18px 0;
+        padding: 1rem 1rem 1rem 1.15rem;
+        color: rgba(255, 248, 237, 0.96);
+        backdrop-filter: blur(2px);
+      }
+
+      h1 { font-size: clamp(3.3rem, 17vw, 5.6rem); }
+
+      section { padding: 3.8rem 1rem; }
+
+      .section-title {
+        font-size: clamp(2.2rem, 14vw, 3.8rem);
+      }
+
+      .panel { border-radius: 22px; }
+
+      .quote-grid,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card { min-height: auto; }
+
+      .care-item {
+        grid-template-columns: 2.7rem 1fr;
+        padding: 0.9rem;
+      }
+
+      .care-number {
+        width: 2.55rem;
+        height: 2.55rem;
+      }
+
+      .visual-divider-inner { min-height: 230px; }
+      .to-top { width: 2.7rem; height: 2.7rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .progress { animation: none; display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#top">Custodian Jacket</a>
+      <div class="nav-links">
+        <a href="#story">Story</a>
+        <a href="#features">Features</a>
+        <a href="#care">Care</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Garment Story, Attribution and Care Information</p>
+        <h1>Custodian Jacket</h1>
+        <p class="hero-subtitle">A practical outerwear garment designed to carry story, respect, movement and everyday function.</p>
+        <div class="hero-statement">
+          <p>The Custodian Jacket was developed to explore how clothing can support cultural expression while remaining wearable, useful and accountable. It combines a relaxed unisex outerwear shape with secure storage, movement-friendly construction, weather-resistant material, QR-linked attribution and a restrained visual design.</p>
+          <p>The jacket is not intended to be costume-like or over-decorated. Its purpose is to create a garment that feels practical enough for everyday wear while still holding meaning, care and responsibility.</p>
+        </div>
+        <a class="scroll-cue" href="#acknowledgement">Scroll to explore</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="acknowledgement">
+      <div class="section-inner">
+        <div>
+          <p class="section-kicker">Acknowledgement</p>
+          <h2 class="section-title">Acknowledgement of Country</h2>
+        </div>
+        <div class="copy">
+          <p>I acknowledge the Darug people as the Traditional Custodians of the land on which the Custodian Jacket was developed, and I pay my respects to Elders past and present.</p>
+          <p>I also acknowledge the guidance shared through the Darug Custodian Aboriginal Corporation and Muru Mittigar. Their cultural guidance helped shape the way this project approached consultation, attribution, visual restraint and respect.</p>
+          <p>The Custodian Jacket has been developed with the understanding that cultural representation must be guided, acknowledged and treated with care.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="section-inner">
+        <div>
+          <p class="section-kicker">Origin</p>
+          <h2 class="section-title">The Story Behind the Jacket</h2>
+        </div>
+        <div class="copy panel">
+          <p>The Custodian Jacket began with a question:</p>
+          <div class="question-block">
+            <span class="question-label">Question</span>
+            <p>How can clothing express identity respectfully, while still being practical enough to wear every day?</p>
+          </div>
+          <p>The design was shaped by research into First Nations fashion, everyday outerwear, cultural representation, storage, comfort, movement and sustainability. Feedback showed that people wanted more clothing that could support Aboriginal and Torres Strait Islander identity expression, but not in a way that felt tokenistic, uncomfortable or impractical.</p>
+          <p>The jacket responds to this by combining cultural communication with practical garment features. It includes hidden side-seam zip pockets, an internal mesh pocket, a relaxed unisex fit, side adjustment, movement-friendly construction, reinforced seams, a hood-to-bag feature and a QR attribution label.</p>
+          <p>The final design uses earthy colours, simple branding and controlled artwork placement so the garment remains wearable and respectful rather than visually crowded.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="visual-divider" aria-hidden="true">
+      <div class="visual-divider-inner"></div>
+    </div>
+
+    <section id="guidance">
+      <div class="section-inner">
+        <div>
+          <p class="section-kicker">Guidance</p>
+          <h2 class="section-title">Places and Guidance That Shaped the Project</h2>
+        </div>
+        <div class="copy">
+          <p>The Custodian Jacket was shaped through research, consultation and real-world testing across several connected places.</p>
+          <p>The concept began on Darug Country, where the need for a culturally respectful and practical garment was explored. Guidance connected to the Darug Custodian Aboriginal Corporation and Muru Mittigar helped strengthen the approach to cultural respect, acknowledgement and careful communication.</p>
+          <p>The completed jacket was later tested in the Sydney CBD by an anonymous Aboriginal end-user. He tried on the final garment, tested the movement, accessed the hidden pockets, viewed the back-panel artwork and scanned the QR attribution label.</p>
+          <p>His feedback helped confirm that the jacket worked as more than a visual design. It functioned as practical outerwear, with accessible pockets, comfortable movement and a QR label that could be found and scanned.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testing">
+      <div class="section-inner">
+        <div>
+          <p class="section-kicker">Testing</p>
+          <h2 class="section-title">End-User Feedback</h2>
+        </div>
+        <div class="copy panel">
+          <p>The final jacket was tested by an anonymous Aboriginal end-user in an outdoor Sydney CBD setting.</p>
+          <p>He wore the jacket and tested front fit, arm movement, reaching, pocket access, comfort, visual impression and QR scan access.</p>
+          <p>His feedback included:</p>
+          <div class="quote-grid">
+            <blockquote>"The pockets are easy to get to and do not stick out."</blockquote>
+            <blockquote>"It looks practical, but it still has something different about it."</blockquote>
+          </div>
+          <p>The final test confirmed that the hidden side-seam zip pockets were easy to access, the jacket allowed practical movement, and the overall design appeared wearable and not too busy.</p>
+          <p>This feedback supported the decision to keep the jacket restrained, practical and low-bulk rather than adding heavy decoration or oversized external pockets.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section" id="features">
+      <div class="section-inner">
+        <div class="center-heading">
+          <p class="section-kicker">Features</p>
+          <h2 class="section-title">Design Features</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-number">01</span>
+            <div>
+              <h3>Relaxed unisex fit</h3>
+              <p>Designed to support layering, movement and different body shapes.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">02</span>
+            <div>
+              <h3>Hidden side-seam zip pockets</h3>
+              <p>Added for secure everyday storage without bulky cargo pockets.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">03</span>
+            <div>
+              <h3>Internal mesh pocket</h3>
+              <p>Provides lightweight internal storage.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">04</span>
+            <div>
+              <h3>Ripstop/DWR outer shell</h3>
+              <p>Selected for durability and light weather resistance.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">05</span>
+            <div>
+              <h3>Reinforced high-stress seams</h3>
+              <p>Used in areas that experience strain, including pockets, shoulder areas and conversion points.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">06</span>
+            <div>
+              <h3>Back action pleat and underarm gusset</h3>
+              <p>Included to improve movement when reaching, bending and wearing the jacket over layers.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">07</span>
+            <div>
+              <h3>Zip-based hood-to-bag feature</h3>
+              <p>Allows the hood section to convert into a compact carry option.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">08</span>
+            <div>
+              <h3>30 mm QR attribution label</h3>
+              <p>Sewn inside the jacket beside the care label. When scanned, it opens this page so the garment story, acknowledgement, care information and material details remain connected to the jacket.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">09</span>
+            <div>
+              <h3>Back-panel artwork</h3>
+              <p>Applied with fabric paint and kept controlled in placement so the jacket remains wearable, respectful and visually balanced.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="attribution-band" id="qr">
+      <div class="section-inner">
+        <div>
+          <p class="section-kicker">Attribution</p>
+          <h2 class="section-title">QR Attribution Label</h2>
+        </div>
+        <div class="copy">
+          <p>The QR code label is part of the jacket's communication system.</p>
+          <p>It is placed inside the garment beside the care label, so it is protected but still easy to find. When scanned, the QR code opens this page and connects the wearer or viewer to the garment story, acknowledgement, care instructions, material information and testing background.</p>
+          <p>The QR label means the jacket does not rely only on what is visible on the outside. It allows the story, care and attribution to stay attached to the garment in a practical way.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="care-section" id="care">
+      <div class="section-inner">
+        <div class="center-heading">
+          <p class="section-kicker">Care</p>
+          <h2 class="section-title">Care Instructions</h2>
+        </div>
+        <div class="care-list" aria-label="Care Instructions">
+          <div class="care-item"><span class="care-number">01</span><p>Spot clean where possible.</p></div>
+          <div class="care-item"><span class="care-number">02</span><p>Gentle cold wash only.</p></div>
+          <div class="care-item"><span class="care-number">03</span><p>Do not bleach.</p></div>
+          <div class="care-item"><span class="care-number">04</span><p>Do not tumble dry.</p></div>
+          <div class="care-item"><span class="care-number">05</span><p>Line dry in shade.</p></div>
+          <div class="care-item"><span class="care-number">06</span><p>Do not iron directly over painted artwork or the QR label.</p></div>
+          <div class="care-item"><span class="care-number">07</span><p>Avoid harsh rubbing over the back-panel artwork.</p></div>
+          <div class="care-item"><span class="care-number">08</span><p>Avoid soaking the garment for long periods.</p></div>
+          <div class="care-item"><span class="care-number">09</span><p>Check zips, seams and labels after washing to make sure they remain secure.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="materials">
+      <div class="section-inner">
+        <div>
+          <p class="section-kicker">Materials</p>
+          <h2 class="section-title">Materials and Sustainability</h2>
+        </div>
+        <div class="copy panel">
+          <p>The Custodian Jacket uses a ripstop/DWR outer shell for durability and light weather resistance.</p>
+          <p>The final garment also includes reinforced seams, hidden zip pockets, an internal mesh pocket, webbing, zips, hardware, fabric paint and a QR label.</p>
+          <p>The jacket is lifecycle-aware rather than fully sustainable. Some performance materials, such as coated or synthetic outerwear fabrics, create environmental trade-offs. To reduce short-life fashion risk, the design prioritises durability, repair-conscious construction, careful cutting, offcut awareness and clear care instructions.</p>
+          <p>The aim is to create a garment that is more likely to be kept, cared for and used over time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="development">
+      <div class="section-inner">
+        <div>
+          <p class="section-kicker">Development</p>
+          <h2 class="section-title">Development Note</h2>
+        </div>
+        <div class="copy">
+          <p>The Custodian Jacket is a tested prototype and design investigation, not a commercial release or mass-produced garment.</p>
+          <p>Further development would require broader fit testing, repeated wear trials, long-term wash testing, continued cultural consultation, professional waterproof testing and further investigation into lower-impact outerwear materials.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>Custodian Jacket</span>
+      <span>Garment Story, Attribution and Care Information</span>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" aria-label="Back to top">↑</a>
+</body>
+</html>
