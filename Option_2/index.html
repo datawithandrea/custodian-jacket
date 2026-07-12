@@ -221,8 +221,8 @@
       margin-top: 1.75rem;
       max-width: 940px;
       font-size: clamp(1rem, 1.25vw, 1.12rem);
-      color: rgba(255, 248, 237, 0.84);
-      border-left: 2px solid rgba(215, 195, 163, 0.82);
+      color: rgba(255, 248, 237, 0.92);
+      border-left: 3px solid rgba(215, 195, 163, 0.95);
       padding-left: 1.25rem;
     }
 
@@ -273,7 +273,7 @@
 
     section {
       scroll-margin-top: 5.5rem;
-      padding: clamp(4.2rem, 8vw, 7rem) 1rem;
+      padding: clamp(3.5rem, 6vw, 5.8rem) 1rem;
     }
 
     .section-inner {
@@ -308,7 +308,7 @@
     }
 
     .copy {
-      max-width: 760px;
+      max-width: 800px;
       color: #3c372f;
     }
 
@@ -355,7 +355,7 @@
     .visual-divider-inner {
       width: min(var(--max), 100%);
       margin: 0 auto;
-      min-height: 330px;
+      min-height: 260px;
       border-radius: calc(var(--radius) + 10px);
       overflow: hidden;
       position: relative;
@@ -664,7 +664,19 @@
       .to-top { width: 2.7rem; height: 2.7rem; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
+    
+    /* Scroll reveal */
+    .reveal{
+      opacity:0;
+      transform:translateY(26px);
+      transition:opacity .8s ease, transform .8s ease;
+      will-change:opacity,transform;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+@media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .progress { animation: none; display: none; }
     }
@@ -701,7 +713,7 @@
   </header>
 
   <main id="main">
-    <section id="acknowledgement">
+    <section class="reveal" id="acknowledgement">
       <div class="section-inner">
         <div>
           <p class="section-kicker">Acknowledgement</p>
@@ -715,7 +727,7 @@
       </div>
     </section>
 
-    <section id="story">
+    <section class="reveal" id="story">
       <div class="section-inner">
         <div>
           <p class="section-kicker">Origin</p>
@@ -734,11 +746,11 @@
       </div>
     </section>
 
-    <div class="visual-divider" aria-hidden="true">
+    <div class="visual-divider reveal" aria-hidden="true">
       <div class="visual-divider-inner"></div>
     </div>
 
-    <section id="guidance">
+    <section class="reveal" id="guidance">
       <div class="section-inner">
         <div>
           <p class="section-kicker">Guidance</p>
@@ -753,7 +765,7 @@
       </div>
     </section>
 
-    <section id="testing">
+    <section class="reveal" id="testing">
       <div class="section-inner">
         <div>
           <p class="section-kicker">Testing</p>
@@ -773,7 +785,7 @@
       </div>
     </section>
 
-    <section class="features-section" id="features">
+    <section class="reveal" class="features-section" id="features">
       <div class="section-inner">
         <div class="center-heading">
           <p class="section-kicker">Features</p>
@@ -847,7 +859,7 @@
       </div>
     </section>
 
-    <section class="attribution-band" id="qr">
+    <section class="reveal" class="attribution-band" id="qr">
       <div class="section-inner">
         <div>
           <p class="section-kicker">Attribution</p>
@@ -861,7 +873,7 @@
       </div>
     </section>
 
-    <section class="care-section" id="care">
+    <section class="reveal" class="care-section" id="care">
       <div class="section-inner">
         <div class="center-heading">
           <p class="section-kicker">Care</p>
@@ -881,7 +893,7 @@
       </div>
     </section>
 
-    <section id="materials">
+    <section class="reveal" id="materials">
       <div class="section-inner">
         <div>
           <p class="section-kicker">Materials</p>
@@ -896,7 +908,7 @@
       </div>
     </section>
 
-    <section id="development">
+    <section class="reveal" id="development">
       <div class="section-inner">
         <div>
           <p class="section-kicker">Development</p>
@@ -918,5 +930,21 @@
   </footer>
 
   <a href="#top" class="to-top" aria-label="Back to top">↑</a>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const items=document.querySelectorAll('.reveal');
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:"0px 0px -60px 0px"});
+  items.forEach(el=>obs.observe(el));
+});
+</script>
+
 </body>
 </html>
