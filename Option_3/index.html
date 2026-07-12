@@ -29,6 +29,7 @@
     margin:0;
     background:var(--canvas);
     background-image:
+      linear-gradient(rgba(255,255,255,.03), rgba(0,0,0,.02)),
       radial-gradient(circle at 15% 8%, rgba(255,255,255,0.32), transparent 40%),
       radial-gradient(circle at 85% 92%, rgba(0,0,0,0.06), transparent 45%);
     color:var(--ink);
@@ -73,7 +74,7 @@
 
   .hero{
     position:relative;
-    padding: 2.6rem 1.6rem 2.2rem;
+    padding: 2.1rem 1.6rem 1.9rem;
     text-align:center;
     color:#f4efe2;
     background-image:
@@ -87,7 +88,7 @@ rgba(28,25,20,0.72) 100%),
     background-position: center 35%;
   }
 
-  @media (min-width:600px){ .hero{ padding: 3.2rem 2.6rem 2.6rem; } }
+  @media (min-width:600px){ .hero{ padding: 2.7rem 2.6rem 2.2rem; } }
 
   .punch{
     position:relative;
@@ -131,13 +132,12 @@ rgba(28,25,20,0.72) 100%),
   }
 
   .hero .statement{
-    margin:1.1rem auto 0;
-    font-size:.9rem;
-    max-width:36ch;
-    color:rgba(250,246,236,0.78);
-    font-family:"Space Mono", monospace;
-    letter-spacing:.01em;
-    line-height:1.6;
+    margin:1rem auto 0;
+    font-size:.96rem;
+    max-width:42ch;
+    color:rgba(250,246,236,0.90);
+    font-family:"Source Serif 4", Georgia, serif;
+    line-height:1.75;
   }
 
   .scan-note{
@@ -157,7 +157,7 @@ rgba(28,25,20,0.72) 100%),
     border:none;
     margin:0;
     height:1px;
-    background-image: repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 11px);
+    background-image: repeating-linear-gradient(90deg, rgba(33,29,24,.22) 0 5px, transparent 5px 11px);
   }
 
   .panel{ padding: 1.7rem 1.5rem; }
@@ -332,6 +332,16 @@ rgba(28,25,20,0.72) 100%),
   }
 
   .footer-tag .end{ display:block; margin-top:.4rem; color:var(--brick); }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .75s ease,transform .75s ease;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:none;
+  }
 </style>
 </head>
 <body>
@@ -362,7 +372,7 @@ rgba(28,25,20,0.72) 100%),
 
       <hr class="stitch" />
 
-      <div class="panel">
+      <div class="panel reveal">
         <p class="kicker">Respect</p>
         <h2>Acknowledgement of Country</h2>
         <p>I acknowledge the Darug people as the Traditional Custodians of the land on which the Custodian Jacket was developed, and I pay my respects to Elders past and present.</p>
@@ -372,7 +382,7 @@ rgba(28,25,20,0.72) 100%),
 
       <hr class="stitch" />
 
-      <div class="panel">
+      <div class="panel reveal">
         <p class="kicker">Origin</p>
         <h2>The Story Behind the Jacket</h2>
         <p>The Custodian Jacket began with a question:</p>
@@ -385,9 +395,9 @@ rgba(28,25,20,0.72) 100%),
         <p>The final design uses earthy colours, simple branding and controlled artwork placement so the garment remains wearable and respectful rather than visually crowded.</p>
       </div>
 
-      <div class="divider-banner" role="img" aria-label="Supplied artwork used as a soft section divider"></div>
+      <div class="divider-banner reveal" role="img" aria-label="Supplied artwork used as a soft section divider"></div>
 
-      <div class="panel">
+      <div class="panel reveal">
         <p class="kicker">Guidance</p>
         <h2>Places and Guidance That Shaped the Project</h2>
         <p>The Custodian Jacket was shaped through research, consultation and real-world testing across several connected places.</p>
@@ -398,7 +408,7 @@ rgba(28,25,20,0.72) 100%),
 
       <hr class="stitch" />
 
-      <div class="panel">
+      <div class="panel reveal">
         <p class="kicker">Testing</p>
         <h2>End-User Feedback</h2>
         <p>The final jacket was tested by an anonymous Aboriginal end-user in an outdoor Sydney CBD setting. He wore the jacket and tested front fit, arm movement, reaching, pocket access, comfort, visual impression and QR scan access.</p>
@@ -411,7 +421,7 @@ rgba(28,25,20,0.72) 100%),
 
       <hr class="stitch" />
 
-      <div class="panel">
+      <div class="panel reveal">
         <p class="kicker">Contents</p>
         <h2>Design Features</h2>
         <div class="ledger">
@@ -439,7 +449,7 @@ rgba(28,25,20,0.72) 100%),
 
       <hr class="stitch" />
 
-      <div class="panel">
+      <div class="panel reveal">
         <p class="kicker">Care</p>
         <h2>Care Instructions</h2>
         <div class="care-list">
@@ -457,7 +467,7 @@ rgba(28,25,20,0.72) 100%),
 
       <hr class="stitch" />
 
-      <div class="panel">
+      <div class="panel reveal">
         <p class="kicker">Materials</p>
         <h2>Materials and Sustainability</h2>
         <p>The Custodian Jacket uses a ripstop/DWR outer shell for durability and light weather resistance. The final garment also includes reinforced seams, hidden zip pockets, an internal mesh pocket, webbing, zips, hardware, fabric paint and a QR label.</p>
@@ -466,7 +476,7 @@ rgba(28,25,20,0.72) 100%),
 
       <hr class="stitch" />
 
-      <div class="bottom-feature">
+      <div class="bottom-feature reveal">
         <p class="kicker">Development</p>
         <h2>Development Note</h2>
         <p>The Custodian Jacket is a tested prototype and design investigation, not a commercial release or mass-produced garment.</p>
@@ -487,6 +497,22 @@ rgba(28,25,20,0.72) 100%),
       </p>
     </footer>
   </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+ const els=document.querySelectorAll(".reveal");
+ const io=new IntersectionObserver(entries=>{
+   entries.forEach(e=>{
+      if(e.isIntersecting){
+         e.target.classList.add("visible");
+         io.unobserve(e.target);
+      }
+   });
+ },{threshold:.15});
+ els.forEach(el=>io.observe(el));
+});
+</script>
 
 </body>
 </html>
